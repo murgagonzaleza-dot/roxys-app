@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cremoladas Roxy</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="top">
+<div><span class="logo">🍧</span><div><strong>CREMOLADAS ROXY</strong><small>Catálogo y pedidos</small></div></div>
+<button id="btnCarrito">🛒 <span id="contador">0</span></button>
+</header>
+<main>
+<section class="hero"><h1>Elige tus sabores</h1><p>Selecciona tus cremोलadas favoritas y realiza tu pedido.</p></section>
+<div id="filtros" class="filtros"></div>
+<section id="productos" class="grid"><div class="cargando">Cargando sabores...</div></section>
+</main>
+<div id="carritoPanel" class="panel hidden">
+<div class="panel-card">
+<button class="cerrar" id="cerrarCarrito">×</button>
+<h2>Tu pedido</h2>
+<div id="carritoItems"></div>
+<div class="total"><span>Total</span><strong id="total">S/ 0.00</strong></div>
+<label>Nombre completo<input id="nombreCliente" autocomplete="name" placeholder="Ingresa tu nombre"></label>
+<label>Método de pago<select id="metodoPago"><option value="YAPE">Yape</option><option value="PLIN">Plin</option><option value="EFECTIVO">Efectivo</option></select></label>
+<button id="btnPagar" class="principal">Continuar al pago</button>
+<div id="mensaje" class="mensaje"></div>
+</div></div>
+<div id="pagoPanel" class="panel hidden">
+<div class="panel-card pago">
+<button class="cerrar" id="cerrarPago">×</button>
+<h2 id="pagoTitulo">Realiza tu pago</h2>
+<p id="pedidoCreado"></p>
+<div id="qrPago" class="qrbox"><img id="qrImagen" src="assets/yape_prueba.png"><strong>QR DE PRUEBA</strong><small>Reemplazar por el QR real de Roxy antes de operar.</small></div>
+<div class="monto" id="montoPago">S/ 0.00</div>
+<p class="aviso">Después de pagar, acércate a ventanilla y muestra tu comprobante.</p>
+<button id="btnFinalizar" class="principal">Ya realicé el pago</button>
+</div></div>
+<div id="finalPanel" class="panel hidden">
+<div class="panel-card final">
+<div class="check">✓</div><h2>Pedido registrado</h2><p id="finalPedido"></p><div class="ticket" id="finalTicket">PAGO PENDIENTE</div><p>Acércate a ventanilla y muestra tu comprobante de pago.</p><button id="btnNuevo" class="principal">Nuevo pedido</button></div>
+</div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

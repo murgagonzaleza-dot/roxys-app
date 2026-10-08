@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#d90429">
+<title>Cremoladas Roxy | Menú Digital TV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="diseño_ROXY_MENU_FINAL.css">
+</head>
+<body>
+<div class="tv-app">
+  
+  <header class="encabezado">
+    <div class="brand">
+      <div class="logo-icon">🍧</div>
+      <div class="brand-text">
+        <span class="brand-name">CREMOLADAS ROXY</span>
+        <span class="brand-sub">SISTEMA DE DISPONIBILIDAD</span>
+      </div>
+    </div>
+    <div class="titulo-central">
+      <span class="live-pulse"></span>
+      <span>MONITOREO DE SABORES EN TIEMPO REAL</span>
+    </div>
+    <div class="reloj-container">
+      <span class="reloj-icon">◷</span>
+      <span class="hora" id="hora">00:00</span>
+    </div>
+  </header>
+
+  
+  <main class="menu-board-exacto">
+    
+    
+    <section class="col-main-cremoladas">
+      <div class="hero-middle-content">
+        <div class="price-circle-red">
+          <small>MVR.</small>
+          <strong>35</strong>
+        </div>
+        <div class="hero-carousel-category" id="heroCarouselCategory">FRUTAS NATURALES</div>
+        <div class="hero-carousel-window">
+          <div class="hero-carousel-track" id="heroCarouselTrack"></div>
+        </div>
+        <div class="hero-carousel-name" id="heroCarouselName">Maracuyá</div>
+        <div class="hero-carousel-dots" id="heroCarouselDots"></div>
+      </div>
+
+      <div class="choice-especiales-block">
+        <div class="red-header-bar">
+          <h2>CHOICE DE ESPECIALES Y MÁS</h2>
+        </div>
+        <div class="cards-grid especiales-left-grid" id="grid-CAT-003"></div>
+      </div>
+    </section>
+
+    <section class="col-center-delite">
+      
+      <div class="red-header-box">
+        <h2>RICE DELITE</h2>
+        <p>ENSALADAS DE FRUTAS Y SABORES</p>
+        <small>6 Sabores a elegir</small>
+        <div class="corner-badge-price">S/. 35</div>
+      </div>
+
+      <div class="dynamic-section" id="especialesSection">
+        <div class="dynamic-section-head">
+          <span id="riceDynamicTitle">FRUTAS NATURALES</span>
+          <span class="count-badge" id="count-CAT-003">0</span>
+        </div>
+        <div class="vertical-products" id="riceCarouselProducts"></div>
+      </div>
+
+      
+      <div class="red-header-bar margin-top">
+        <h2>MINI CREMOLADAS</h2>
+      </div>
+
+      
+      <div class="mini-cremoladas-grid">
+        <div class="mini-cat-panel" data-category="CAT-001">
+          <div class="mini-cat-head">
+            <span>FRUTAS NATURALES</span>
+            <span class="count-badge" id="count-CAT-001">0</span>
+          </div>
+          <div class="cards-grid" id="grid-CAT-001"></div>
+        </div>
+
+        <div class="mini-cat-panel" data-category="CAT-002">
+          <div class="mini-cat-head">
+            <span>LECHE C/ FRUTAS</span>
+            <span class="count-badge" id="count-CAT-002">0</span>
+          </div>
+          <div class="cards-grid" id="grid-CAT-002"></div>
+        </div>
+      </div>
+    </section>
+
+
+    
+    <section class="col-right-supreme">
+      
+      <div class="top-phones-bar">
+        <span>📲 943 465 782</span>
+        <span>📲 963 275 649</span>
+      </div>
+
+      <div class="red-header-box black-bg-title">
+        <h2>SUPREME MEALS</h2>
+        <p>CAPRICHOS DE FRUTA</p>
+        <small>Con helado y toppings</small>
+      </div>
+
+      <div class="dynamic-section preparation-section">
+        <div class="dynamic-section-head">
+          <span>EN PREPARACIÓN</span>
+          <span class="count-badge" id="count-preparacion">0</span>
+        </div>
+        <div class="vertical-products" id="grid-preparacion"></div>
+      </div>
+
+      
+      <div class="sides-menu-box">
+        <div class="red-header-bar">
+          <h2>SIDES MENU</h2>
+        </div>
+        <ul class="sides-list" id="sidesList">
+          <li><span>VENTANILLA / TICKETS</span><strong>PRÓXIMAMENTE</strong></li>
+        </ul>
+        <div class="sides-footer-thumbs">
+          <div class="thumb-item"><span>VENTANILLA</span></div>
+          <div class="thumb-item"><span>TICKETS</span></div>
+          <div class="thumb-item"><span>ROXY</span></div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="event-overlay" id="eventOverlay" hidden>
+      <div class="event-card">
+        <div class="event-chef">👨‍🍳</div>
+        <div class="event-info">
+          <span>PREPARANDO AHORA</span>
+          <strong id="eventProduct">Sabor</strong>
+          <small>Serviendo tu cremola...</small>
+        </div>
+        <div class="event-product" id="eventIcon">🍧</div>
+      </div>
+    </section>
+</main>
+
+  
+  <footer class="pie">
+    <div class="pie-info">
+      <span>CREMOLADAS ROXY</span>
+      <b>•</b>
+      <span>PEDIDOS EN CAJA</span>
+      <b>•</b>
+      <span>100% FRUTA NATURAL Y FRESCA</span>
+    </div>
+    <div class="live-counter-inline">
+      SABORES DISPONIBLES EN TIEMPO REAL: <strong id="totalDisponibles">0</strong>
+    </div>
+  </footer>
+
+  
+  <div class="tv-loading" id="tvLoading" hidden>
+    <div class="loading-box"><div class="spinner"></div><strong>SINCRONIZANDO MENÚ...</strong></div>
+  </div>
+  <div class="tv-error" id="tvError" hidden>
+    <div class="error-card"><div>⚠️</div><strong>SIN CONEXIÓN DE RED</strong><span id="tvErrorMessage">Reintentando...</span></div>
+  </div>
+</div>
+
+<script src="control_ROXY_75TV_FINAL.js"></script>
+</body>
+</html>

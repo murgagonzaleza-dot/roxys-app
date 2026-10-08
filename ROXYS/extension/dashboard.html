@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cremoladas Roxy - Panel de Cajero</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboard_extra.css">
+
+</head>
+
+<body data-rol="CAJERO">
+
+    <div class="app-layout">
+
+
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <div class="brand-logo">
+                    <img src="logo/logo.jpg" alt="Cremoladas Roxy Logo" class="sidebar-logo-img">
+                </div>
+
+                <div class="brand-name">
+                    Cremoladas <span>Roxy</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+
+                <a href="#" class="nav-item active" id="navDashboard">
+
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                    </svg>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <div class="nav-group" id="grupoProductos">
+                    <a href="#" class="nav-item nav-item-parent" id="navProductos">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                        <span>Productos</span>
+                        <span class="nav-chevron" id="productosChevron">⌄</span>
+                    </a>
+                    <div class="submenu-productos" id="submenuProductos" hidden>
+                        <a href="#" class="submenu-item active" id="subRegistroProducto">
+                            <span>＋</span>
+                            <span>Registro de producto</span>
+                        </a>
+                        <a href="#" class="submenu-item" id="subCatalogo">
+                            <span>▤</span>
+                            <span>Catálogo</span>
+                        </a>
+                        <a href="#" class="submenu-item" id="subTablaProductos">
+                            <span>▦</span>
+                            <span>Tabla de productos</span>
+                        </a>
+                        <a href="#" class="submenu-item" id="subPedido">
+                            <span>▱</span>
+                            <span>Pedido</span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <a href="#" class="nav-item" id="btnTV">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="14" rx="2" />
+                        <path d="M8 22h8" />
+                        <path d="M12 18v4" />
+                    </svg>
+                    <span>Monitoreo TV</span>
+                </a>
+
+                <a href="#" class="nav-item" id="navTematica">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 7v5l3 2" />
+                    </svg>
+                    <span>Temática</span>
+                </a>
+
+                <div id="turnoSidebar" class="turno-sidebar" hidden>
+
+                    <div class="turno-sidebar-title">
+                        Estado de mi turno
+                    </div>
+
+                    <button type="button" class="turno-sidebar-btn" id="btnAtendiendo">
+                        Atendiendo
+                    </button>
+
+                    <button type="button" class="turno-sidebar-btn" id="btnBreak">
+                        Break
+                    </button>
+
+                    <button type="button" class="turno-sidebar-btn" id="btnPausa">
+                        Pausa
+                    </button>
+
+                    <button type="button" class="turno-sidebar-btn" id="btnTermino">
+                        Terminar turno
+                    </button>
+
+                    <div class="turno-sidebar-status">
+                        <span id="estadoPunto"></span>
+                        <strong id="textoEstado">EN LÍNEA</strong>
+                    </div>
+
+                    <div id="entregaPendiente" hidden class="turno-sidebar-entrega">
+                        Tienes una entrega pendiente.
+                        <button type="button" id="btnEntregado" class="turno-sidebar-btn">
+                            Marcar entregado
+                        </button>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+                <a href="#" class="nav-item" id="navVentas" style="display:none;">
+                    <span>Ventas</span>
+                </a>
+
+                <a href="#" class="nav-item" id="navPersonal" style="display:none;">
+                    <span>Personal</span>
+                </a>
+
+                <a href="#" class="nav-item" id="navAjustes" style="display:none;">
+                    <span>Ajustes</span>
+                </a>
+
+            </nav>
+
+
+
+            <div class="sidebar-footer">
+
+                <a href="#" class="nav-item logout" id="btnCerrarSesion">
+
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+
+                    <span>Cerrar Sesión</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <div class="main-wrapper">
+
+
+
+            <header class="top-header">
+
+
+
+                <button class="menu-toggle" id="menuToggle" type="button">
+
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+
+                    </svg>
+
+                </button>
+
+
+
+                <div class="search-bar">
+
+                    <input type="text" id="buscador" placeholder="Buscar productos..." autocomplete="off">
+
+                    <button class="search-btn" id="btnBuscar" type="button">
+
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+
+                            <circle cx="11" cy="11" r="8" />
+
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="header-actions">
+
+
+
+                    <button class="icon-btn" id="btnNotificaciones" type="button">
+
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+
+                        </svg>
+
+                        <span class="notification-badge"></span>
+
+                    </button>
+
+
+
+                    <div class="user-profile">
+
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+                            alt="Avatar del cajero" class="avatar">
+
+                        <div class="user-info">
+
+
+
+                            <span class="user-name" id="nombreUsuario">
+                                Cajero
+                            </span>
+
+                            <span class="user-role" id="rolUsuario">
+                                CAJERO · EN LÍNEA
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <main class="dashboard-content">
+
+
+
+                <section class="kpi-grid">
+
+
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-data">
+
+                            <span class="kpi-value" id="kpiVentas">
+                                S/. 0.00
+                            </span>
+
+                            <span class="kpi-label">
+                                Ventas del Día
+                            </span>
+
+                        </div>
+
+                        <div class="kpi-icon">
+
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+
+                                <line x1="12" y1="1" x2="12" y2="23" />
+
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-data">
+
+                            <span class="kpi-value" id="kpiVasos">
+                                0
+                            </span>
+
+                            <span class="kpi-label">
+                                Vasos Vendidos
+                            </span>
+
+                        </div>
+
+                        <div class="kpi-icon">
+
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+
+                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3z" />
+
+                                <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-data">
+
+                            <span class="kpi-value" id="kpiSabores">
+                                0
+                            </span>
+
+                            <span class="kpi-label">
+                                Sabores Disponibles
+                            </span>
+
+                        </div>
+
+                        <div class="kpi-icon">
+
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-data">
+
+                            <span class="kpi-value" id="kpiDisponibilidad">
+                                0%
+                            </span>
+
+                            <span class="kpi-label">
+                                Disponibilidad
+                            </span>
+
+                        </div>
+
+                        <div class="kpi-icon">
+
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+
+                                <polyline points="22 4 12 14.01 9 11.01" />
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+
+                <section class="table-card" id="seccionProductos">
+                    <div class="table-header">
+                        <div>
+                            <h2>Productos en Sistema</h2>
+                            <p id="mensajeDashboard" style="margin-top:6px;font-size:12px;color:#64748B;">Selecciona el
+                                estado del producto.</p>
+                        </div>
+                        <button class="btn-view-all" id="btnActualizarProductos" type="button">Actualizar</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table" id="tablaProductos">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Categoría</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listaProductos"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="module-section" id="seccionRegistroProducto" hidden>
+                    <div class="module-header">
+                        <div>
+                            <h2>Registro de producto</h2>
+                            <p>Agrega un nuevo producto a la hoja PRODUCTOS.</p>
+                        </div>
+                        <span class="theme-current-badge">PRODUCTOS</span>
+                    </div>
+
+                    <form id="formRegistroProducto" class="product-form">
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="registroNombre">Nombre del producto</label>
+                                <input id="registroNombre" name="nombre" type="text" maxlength="80"
+                                    placeholder="Ej. Maracuyá" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="registroCategoria">Categoría</label>
+                                <select id="registroCategoria" name="idCategoria" required>
+                                    <option value="">Selecciona una categoría</option>
+                                    <option value="CAT-001">🍓 Frutas Naturales</option>
+                                    <option value="CAT-002">🥛 Leche c/ Frutas</option>
+                                    <option value="CAT-003">⭐ Especiales Roxy</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="registroIcono">Icono</label>
+                                <input id="registroIcono" name="icono" type="text" maxlength="8" placeholder="🍓"
+                                    required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="registroEstado">Estado inicial</label>
+                                <select id="registroEstado" name="estado" required>
+                                    <option value="DISPONIBLE">🟢 Disponible</option>
+                                    <option value="EN PREPARACIÓN">🟡 En Preparación</option>
+                                    <option value="AGOTADO">🔴 Agotado</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="registroActivo">Activo</label>
+                                <select id="registroActivo" name="activo" required>
+                                    <option value="SI">Sí</option>
+                                    <option value="NO">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="reset" class="btn-secondary" id="btnLimpiarRegistro">Limpiar</button>
+                            <button type="submit" class="btn-primary" id="btnGuardarProducto">Registrar
+                                producto</button>
+                        </div>
+
+                        <div id="mensajeRegistroProducto" class="form-message" hidden></div>
+                    </form>
+                </section>
+
+                <section class="module-section" id="seccionCatalogo" hidden>
+                    <div class="module-header">
+                        <div>
+                            <h2>Catálogo</h2>
+                            <p>Vista de los productos disponibles para el cliente.</p>
+                        </div>
+                        <div class="catalog-actions">
+                            <span class="live-pill"><span></span> Sincronizado con PRODUCTOS</span>
+                            <button class="btn-view-all" id="btnActualizarCatalogo" type="button">Actualizar
+                                catálogo</button>
+                        </div>
+                    </div>
+                    <div class="catalog-toolbar">
+                        <div class="catalog-filter">
+                            <button type="button" class="catalog-filter-btn active" data-cat="TODAS">Todos</button>
+                            <button type="button" class="catalog-filter-btn" data-cat="CAT-001">🍓 Frutas
+                                Naturales</button>
+                            <button type="button" class="catalog-filter-btn" data-cat="CAT-002">🥛 Leche c/
+                                Frutas</button>
+                            <button type="button" class="catalog-filter-btn" data-cat="CAT-003">⭐ Especiales
+                                Roxy</button>
+                        </div>
+                        <div class="catalog-count" id="catalogoContador">0 disponibles</div>
+                    </div>
+                    <div class="catalog-grid" id="catalogoGrid"></div>
+                </section>
+                <section class="module-section" id="seccionTablaProductos" hidden>
+                    <div class="module-header">
+                        <div>
+                            <h2>Productos en Sistema</h2>
+                            <p>Esta tabla está conectada directamente a la hoja PRODUCTOS.</p>
+                        </div>
+                        <button class="btn-view-all" id="btnActualizarProductosCatalogo" type="button">Actualizar
+                            tabla</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table" id="tablaProductosCatalogo">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Producto</th>
+                                    <th>Categoría</th>
+                                    <th>Estado</th>
+                                    <th>Activo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listaProductosCatalogo"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="module-section" id="seccionPedido" hidden>
+                    <div class="module-header">
+                        <div>
+                            <h2>Pedido</h2>
+                            <p>Gestión de pedidos y tickets.</p>
+                        </div>
+                    </div>
+                    <div class="module-placeholder">
+                        <strong>Módulo de pedidos</strong>
+                        <span>Lo conectaremos después de terminar Registro de producto.</span>
+                    </div>
+                </section>
+
+                <section class="module-section" id="seccionTematica" hidden>
+                    <div class="module-header">
+                        <div>
+                            <h2>Temática de temporada</h2>
+                            <p>Selecciona una temática o deja el sistema en modo automático.</p>
+                        </div>
+                        <span class="theme-current-badge" id="temaActualBadge">Automática</span>
+                    </div>
+                    <div class="theme-preview" id="themePreview">
+                        <div class="theme-preview-decor theme-decor-left">🎃</div>
+                        <div>
+                            <strong id="themePreviewTitle">Halloween</strong>
+                            <span id="themePreviewText">Vista previa de temporada activa</span>
+                        </div>
+                        <div class="theme-preview-decor theme-decor-right">🕷️</div>
+                    </div>
+                    <div class="theme-grid">
+                        <button type="button" class="theme-card" data-theme="auto">
+                            <span class="theme-icon">🔄</span>
+                            <strong>Automática</strong>
+                            <small>Cambia según el mes.</small>
+                        </button>
+                        <button type="button" class="theme-card" data-theme="halloween">
+                            <span class="theme-icon">🎃</span>
+                            <strong>Halloween</strong>
+                            <small>Octubre</small>
+                        </button>
+                        <button type="button" class="theme-card" data-theme="navidad">
+                            <span class="theme-icon">🎄</span>
+                            <strong>Navidad</strong>
+                            <small>Diciembre</small>
+                        </button>
+                        <button type="button" class="theme-card" data-theme="amor">
+                            <span class="theme-icon">❤️</span>
+                            <strong>Día del Amor</strong>
+                            <small>Febrero</small>
+                        </button>
+                        <button type="button" class="theme-card" data-theme="madre">
+                            <span class="theme-icon">🌷</span>
+                            <strong>Día de la Madre</strong>
+                            <small>Mayo</small>
+                        </button>
+                        <button type="button" class="theme-card" data-theme="padre">
+                            <span class="theme-icon">👔</span>
+                            <strong>Día del Padre</strong>
+                            <small>Junio</small>
+                        </button>
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

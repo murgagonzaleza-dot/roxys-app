@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ROXY · Pedidos Caja</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <div>
+    <strong>CREMOLADAS ROXY</strong>
+    <span>Pedidos QR · Caja</span>
+  </div>
+  <button id="actualizar">Actualizar</button>
+</header>
+<main>
+  <div class="resumen">
+    <div><small>PENDIENTES DE PAGO</small><strong id="pendientes">0</strong></div>
+    <div><small>PAGADOS</small><strong id="pagados">0</strong></div>
+    <div><small>TOTAL VISIBLE</small><strong id="monto">S/. 0.00</strong></div>
+  </div>
+  <section id="lista"></section>
+</main>
+<script src="../cliente/config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

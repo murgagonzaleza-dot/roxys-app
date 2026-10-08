@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Cremoladas Roxy",
+  "version": "1.0.0",
+  "description": "Sistema de control y pantalla de Cremoladas Roxy",
+  "permissions": ["windows"],
+  "host_permissions": [
+    "https://script.google.com/*",
+    "https://scriptusercontent.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

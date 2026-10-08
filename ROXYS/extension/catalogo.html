@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo Cremoladas Roxy</title>
+<link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+<div class="catalog-app">
+<header class="catalog-header">
+<div class="brand">🍧 <strong>CREMOLADAS <span>ROXY</span></strong></div>
+<div class="season" id="seasonBadge">Temporada Roxy</div>
+</header>
+<main>
+<section class="hero">
+<div><span class="eyebrow">CATÁLOGO DIGITAL</span><h1>Eligetu crem olada</h1><p>Selecciona tu sabor disponible y realiza tu pedido desde tu mesa.</p></div>
+<div class="hero-icon">🍧</div>
+</section>
+<section class="customer-card">
+<label for="clienteNombre">Nombre completo</label>
+<input id="clienteNombre" type="text" maxlength="100" placeholder="Escribe tu nombre completo" autocomplete="name">
+</section>
+<nav class="category-tabs" id="categoryTabs">
+<button class="active" data-cat="TODAS">Todos</button>
+<button data-cat="CAT-001">🍓 Frutas Naturales</button>
+<button data-cat="CAT-002">🥛 Leche c/ Frutas</button>
+<button data-cat="CAT-003">⭐ Especiales Roxy</button>
+</nav>
+<section class="catalog-grid" id="catalogGrid"></section>
+<section class="order-panel" id="orderPanel" hidden>
+<div><span class="order-label">Tu selección</span><strong id="selectedProduct">—</strong><small id="selectedCategory">—</small></div>
+<button id="btnEnviarPedido" type="button">Realizar pedido</button>
+</section>
+<div class="message" id="catalogMessage"></div>
+</main>
+<footer>© Cremoladas Roxy · Catálogo digital</footer>
+</div>
+<script src="catalogo.js"></script>
+</body>
+</html>

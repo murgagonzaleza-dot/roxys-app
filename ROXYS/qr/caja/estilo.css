@@ -1,0 +1,51 @@
+*{box-sizing:border-box}
+body{margin:0;background:#f4f4f5;color:#18181b;font-family:Arial,sans-serif}
+header{background:#fff;border-bottom:1px solid #ddd;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+header strong{display:block;font-size:20px}
+header span{display:block;color:#71717a;margin-top:3px}
+header button{background:#18181b;color:#fff;border:0;border-radius:10px;padding:10px 15px;cursor:pointer}
+main{max-width:1600px;margin:auto;padding-bottom:30px}
+.resumen{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:18px}
+.resumen div{background:#fff;border-radius:15px;padding:15px;border:1px solid #e4e4e7}
+.resumen small{display:block;color:#71717a;font-weight:700}
+.resumen strong{font-size:25px;display:block;margin-top:6px}
+.tabla-contenedor{margin:0 18px;background:#fff;border:1px solid #ddd;border-radius:18px;overflow:auto;box-shadow:0 5px 20px rgba(0,0,0,.04)}
+.tabla-pedidos{width:100%;border-collapse:collapse;min-width:1250px}
+.tabla-pedidos th{background:#18181b;color:#fff;text-align:left;padding:13px 12px;font-size:12px;white-space:nowrap}
+.tabla-pedidos td{padding:13px 12px;border-bottom:1px solid #eee;vertical-align:middle;font-size:13px}
+.tabla-pedidos tbody tr:hover{background:#fafafa}
+.tabla-pedidos tbody tr:last-child td{border-bottom:0}
+.pedido-id{font-size:14px}
+.productos-celda{line-height:1.6;min-width:170px}
+.total{font-size:15px;white-space:nowrap}
+.metodo{font-weight:800}
+.badge{display:inline-flex;align-items:center;justify-content:center;padding:7px 10px;border-radius:999px;font-size:11px;font-weight:900;white-space:nowrap}
+.pago-pendiente{background:#FEF3C7;color:#92400E}
+.pago-pagado{background:#DCFCE7;color:#166534}
+.pago-rechazado{background:#FEE2E2;color:#991B1B}
+.ticket{display:inline-flex;background:#18181b;color:#fff;border-radius:8px;padding:7px 9px;font-size:12px;white-space:nowrap}
+.sin-ticket{color:#a1a1aa}
+.estado-pedido{display:inline-flex;padding:6px 9px;border-radius:999px;background:#f4f4f5;color:#3f3f46;font-size:10px;font-weight:900;white-space:nowrap}
+.estado-pedido.confirmado{background:#DBEAFE;color:#1D4ED8}
+.estado-pedido.en-preparación{background:#FEF3C7;color:#92400E}
+.estado-pedido.listo{background:#DCFCE7;color:#166534}
+.estado-pedido.entregado{background:#E4E4E7;color:#3F3F46}
+.acciones-pago{display:flex;gap:6px;flex-direction:column;min-width:120px}
+.acciones-pago button,.btn-preparar,.btn-listo,.btn-entregado{border:0;border-radius:9px;padding:8px 10px;color:#fff;font-weight:900;font-size:11px;cursor:pointer;white-space:nowrap}
+.btn-pagado{background:#15803D}
+.btn-pagado:hover{background:#166534}
+.btn-rechazado{background:#B91C1C}
+.btn-rechazado:hover{background:#991B1B}
+.btn-preparar{background:#2563EB}
+.btn-listo{background:#15803D}
+.btn-entregado{background:#52525B}
+.accion-finalizada{font-size:11px;font-weight:900;color:#52525b;white-space:nowrap}
+.rechazado-texto{color:#B91C1C}
+.vacio{text-align:center;padding:50px;color:#71717a;background:#fff;margin:18px;border-radius:18px}
+small{color:#71717a}
+@media(max-width:900px){
+  .resumen{grid-template-columns:1fr}
+  header{padding:14px}
+  header strong{font-size:17px}
+  .tabla-contenedor{margin:0 10px}
+}
